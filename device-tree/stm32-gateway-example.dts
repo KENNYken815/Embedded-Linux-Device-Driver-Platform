@@ -1,0 +1,20 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "st,stm32mp1";
+
+    fragment@0 {
+        target-path = "/";
+        __overlay__ {
+            gateway-status-led {
+                compatible = "gpio-leds";
+                gateway_led {
+                    label = "gateway-status";
+                    gpios = <&gpioa 5 0>;
+                    default-state = "off";
+                };
+            };
+        };
+    };
+};
